@@ -1,0 +1,53 @@
+.container {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: row;
+    gap: 2.5vw;
+}
+
+.center{
+    justify-content: center;
+    margin: auto;
+    gap: 5vw;
+    padding-top: 5vw;
+}
+
+img {
+    width: 30vw;
+}
+
+.image-carousel{
+    padding: 5vw;
+}
+
+.about-desc{
+    padding: 5vw;
+    background-image: url(../../assets/bg/bg_aboutUs_transparant.jpg) !important;
+    background-size:100%;
+    background-repeat: no-repeat;
+}
+
+.name-container{
+    border-radius: 20px;
+    padding: 10px;
+    width: 16vw;
+
+}
+
+@media screen and (max-width:600px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5vw;
+    }
+
+    .image-carousel{
+        padding: 5vw;
+        justify-content: center;
+        margin: auto;
+    }
+
+    img {
+        width: 60vw;
+    }
+}

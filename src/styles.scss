@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+$light-pink : #FFA8B8;
+$dark-red: #94293D;
+
+body {
+    font-family: 'Mali';
+    margin: 0px !important;
+    position: relative;
+}
+
+button {
+    font-family: 'Mali';
+    padding: 14px 36px;
+    border-radius: 24px;
+    border-style: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.title-text{
+    font-size: 30px;
+    line-height: 10px;
+}
+
+.subtitle-text{
+    font-size: 20px;
+    line-height: 10px;
+}
+
+.separator{
+    hr {
+        position: absolute;
+        color: black;
+        z-index: 0;
+    }
+    img {
+        position: absolute;
+        z-index: 1;
+    }
+    
+}

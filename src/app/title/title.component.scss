@@ -1,0 +1,61 @@
+@use '../../styles.scss' as styles;
+
+img {
+    width: 35vw;
+}
+
+.title-content {
+    text-align: center;
+}
+
+.top-desc{
+    margin-bottom: 40px;
+}
+
+.container {
+    // Display Layout
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 8vw;
+    padding-top: 100px;
+    // Background
+    background-image: url(../../assets/bg/bg_home_large.jpg);
+    background-size:100%;
+    background-repeat: no-repeat;
+}
+
+
+button {
+    margin-top: 22px;
+    color: styles.$dark-red;
+    background-color: styles.$light-pink;
+}
+
+@media screen and (max-width:600px) {
+
+    img {
+        width: 50vw;
+    }
+
+    .container {
+        // Display Layout
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        padding-top: 80px;
+        // Background
+        background-image: url(../../assets/bg/bg_home_small.jpg);
+        background-size:100%;
+        background-repeat: no-repeat;
+    }
+
+    button {
+        margin-top: 38px;
+    }
+
+}
