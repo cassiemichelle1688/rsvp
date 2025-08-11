@@ -2,12 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TitleComponent } from '../title/title.component';
 import { AboutComponent } from '../about/about.component';
+import { ScheduleComponent } from '../schedule/schedule.component';
+import { RsvpComponent } from '../rsvp/rsvp.component';
+import { AddComponent } from '../add/add.component';
+import { WishComponent } from '../wish/wish.component';
 
 @Component({
     selector: 'app-home',
     imports: [
         TitleComponent, 
-        AboutComponent
+        AboutComponent, 
+        ScheduleComponent, 
+        RsvpComponent, 
+        AddComponent, 
+        WishComponent
     ],
     templateUrl: './home.component.html',
     styleUrl: './home.component.scss'

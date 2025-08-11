@@ -1,0 +1,16 @@
+@use '../../styles.scss' as styles;
+
+hr {
+    display: block;
+    border-top: 1px solid styles.$light-gold;
+    margin: 36px auto 0px auto;
+    width: 90vw;
+}
+
+footer{
+    background-color: styles.$light-gold;
+    padding: 2px;
+    p {
+        text-align: center;
+    }
+}

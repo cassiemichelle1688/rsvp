@@ -1,0 +1,62 @@
+@use '../../styles.scss' as styles;
+
+.container-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 2vw;
+}
+
+.sub-section{
+    width: 45vw;
+}
+
+.vertical-line {
+    border: 1px solid styles.$light-gold;
+}
+
+.gift-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 2vw;
+}
+
+.countdown-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.gift {
+    border: 1px solid styles.$light-gold;
+    border-radius: 10px;
+    width: 14vw;
+    text-align: center;
+}
+
+button {
+    color: styles.$dark-blue;
+    background-color: styles.$light-blue;
+    padding: 12px 24px;
+    margin-top: 4vw;
+}
+
+@media screen and (max-width:600px) {
+    .container-row{
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .vertical-line{
+        border: 0px;
+    }
+
+    .sub-section{
+        width: 90vw;
+    }
+
+    .gift{
+        width: 44vw;
+    }
+}

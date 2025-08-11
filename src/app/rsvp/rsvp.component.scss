@@ -1,0 +1,82 @@
+@use '../../styles.scss' as styles;
+
+.container-column {
+    padding: 0px 10vw;
+}
+
+.title-section {
+    text-align: left !important;
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    align-items: center;
+    align-self: center;
+}
+
+.container-form{
+    border: 1px solid styles.$light-gold;
+    border-radius: 20px;
+    padding: 2% 4%;
+    margin: 4% 0px;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-group{
+    display: flex;
+    flex-direction: row;
+    gap:6vw;
+
+    label{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+button {
+    color: styles.$dark-red;
+    background-color: styles.$light-pink;
+    padding: 12px 24px;
+}
+
+.footer-group {
+    margin-top: 4vw; 
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media screen and (max-width:600px) {
+    .container-column {
+        padding: 0px 5vw;
+    }
+
+    .form-group{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    select {
+        width: 70vw !important;
+    }
+
+    button {
+        margin-bottom: 20px;
+    }
+
+    .container-row{
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 20px;
+    }
+
+}

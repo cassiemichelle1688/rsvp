@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 $light-pink : #FFA8B8;
 $dark-red: #94293D;
+$light-gold: #F4EADC;
+$dark-blue: #015282;
+$light-blue: #BFDAEA;
 
 body {
     font-family: 'Mali';
@@ -26,6 +29,12 @@ button {
     line-height: 10px;
 }
 
+hr {
+    display: block;
+    border-top: 1px solid $light-gold;
+    margin: 36px auto 0px auto;
+}
+
 .separator{
     hr {
         position: absolute;
@@ -37,4 +46,25 @@ button {
         z-index: 1;
     }
     
+}
+
+.title-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.h5-text { font-size: 24px;}
+
+.h6-text { font-size: 18px;}
+
+.h7-text { font-size: 14px;}
+
+select {
+    width: 16vw;
+    padding: 8px;
+    border-radius: 6px;
+    font-family: 'Mali' !important;
+    font-size: 16px;
+    -webkit-appearance: none;
+    appearance: none;
 }

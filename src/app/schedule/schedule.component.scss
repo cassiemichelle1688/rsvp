@@ -1,0 +1,37 @@
+@use '../../styles.scss' as styles;
+
+.container {
+    width: 90vw;
+    margin: 5vw auto 5vw auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5vw;
+}
+
+.sub-section{
+    border: 1px solid styles.$light-gold;
+    border-radius: 20px;
+    padding: 0px 2vw 24px 2vw;
+    text-align: center;
+    width: 30vw;
+}
+
+button {
+    color: styles.$dark-blue;
+    background-color: styles.$light-blue;
+    padding: 12px 24px;
+}
+
+@media screen and (max-width:600px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5vw;
+    }
+
+    .sub-section{
+        width: 96%;
+    }
+
+}

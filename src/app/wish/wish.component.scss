@@ -1,0 +1,45 @@
+@use '../../styles.scss' as styles;
+
+.container-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 5vw;
+    gap: 20px;
+}
+
+textarea {
+    width: 40vw;
+    height: 10vw;
+}
+
+button {
+    color: styles.$dark-red;
+    background-color: styles.$light-pink;
+    padding: 12px 24px;
+    margin-top: 2vw;
+}
+
+textarea {
+    font-family: 'Mali';
+    border-color: styles.$light-gold;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+@media screen and (max-width:600px) {
+    .container-row{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .wish-section{
+        width: 90vw;
+    }
+
+    textarea {
+        width: 90vw;
+        height: 20vw;
+    }
+}
