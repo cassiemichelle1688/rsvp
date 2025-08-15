@@ -3,6 +3,7 @@ import { NgOptimizedImage } from '@angular/common'
 
 @Component({
   selector: 'app-wish',
+  standalone: true, // Add this line
   imports: [NgOptimizedImage],
   templateUrl: './wish.component.html',
   styleUrl: './wish.component.scss'

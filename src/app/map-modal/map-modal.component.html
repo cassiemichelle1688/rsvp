@@ -1,0 +1,12 @@
+<div *ngIf="isMapVisible" class="modal-overlay" (click)="closeMap()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="close-button" (click)="closeMap()">&times;</button>
+      <!-- This div is the target for our Leaflet map -->
+      <div id="leaflet-map-container"></div>
+      <div class="copy-text">
+        <button class="my-button" (click)="copyText()" [class.copied]="isCopied">
+          {{ isCopied ? 'Copied!' : 'Copy Link' }}
+        </button>
+      </div>
+    </div>
+  </div>

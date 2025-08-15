@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TitleComponent } from '../title/title.component';
 import { AboutComponent } from '../about/about.component';
@@ -9,6 +9,7 @@ import { WishComponent } from '../wish/wish.component';
 
 @Component({
     selector: 'app-home',
+    standalone: true, // Add this line
     imports: [
         TitleComponent, 
         AboutComponent, 
@@ -38,4 +39,16 @@ export class HomeComponent implements OnInit {
         }
     }
 
+    // Use @ViewChild to get a reference to the element with #aboutSection
+    @ViewChild('aboutSection', { read: ElementRef }) aboutSection!: ElementRef;
+
+    // This method is called when the (scrollToAbout) event is emitted from app-title
+    onScrollToAbout(): void {
+        console.log('Scrolling to about section...');
+        this.aboutSection.nativeElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+        });
+    }
+    
 }
