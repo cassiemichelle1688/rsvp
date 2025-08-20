@@ -9,6 +9,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <!-- Add this script for GitHub Pages 404 routing -->
+  <!-- <script>
+    (function() {
+      // Check for the redirect parameter from the 404.html script
+      var params = new URLSearchParams(window.location.search);
+      var path = params.get('p');
+  
+      if (path) {
+        // Reconstruct the full path and replace the current URL state
+        // This makes the URL in the address bar look correct
+        var newPath = window.location.pathname.split('/').slice(0, -1).join('/') + path;
+        window.history.replaceState(null, '', newPath);
+      }
+    })();
+  </script> -->
+  <!-- End of script -->
 </head>
 <body>
   <app-root></app-root>
