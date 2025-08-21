@@ -4,46 +4,70 @@
         <span class="h6-text">I’m grateful to invite you to this event, </span>
     </div>
     <div class="container-form">
-        <p class="h7-text"><b>Dear Mr./Mrs./Ms. Guest</b>, please confirm your attendence</p>
-        <div class="sub-group">
-            <div class="form-group">
-                <p class="h6-text label">Would you come to Holy Matrimony?</p>
-                <div class="input-group">
-                    <label><input type="radio" value="1">Yes</label>
-                    <label><input type="radio" value="0">No</label>
+        @if (!isSubmitted && (isBothEvent != null)) {
+        <p class="h7-text"><b>Dear Mr./Mrs./Ms. {{ guestName }}</b>, please confirm your attendence</p>
+        <form [formGroup]="rsvpForm" (ngSubmit)="onSubmit()">
+            <div class="sub-group">
+                <div class="form-group">
+                    <p class="h6-text label">Would you come to Holy Matrimony?</p>
+                    <div class="input-group">
+                        <label><input formControlName="m_attendance" type="radio" value="1">Yes</label>
+                        <label><input formControlName="m_attendance" type="radio" value="0">No</label>
+                    </div>
                 </div>
+                @if(rsvpForm.get('m_attendance')?.value == "1"){
+                    <div class="form-group">
+                        <p class="h6-text label">How many persons?</p>
+                        <div class="input-group">
+                            <select formControlName="m_person">
+                                <option [value]="''" disabled>-- Please choose --</option>
+                                <option value="1">1 person</option>
+                                <option value="2">2 persons</option>
+                            </select>
+                        </div>
+                    </div>
+                }
             </div>
-            <div class="form-group">
-                <p class="h6-text label">How many persons?</p>
-                <div class="input-group">
-                    <select name="matrimony-persons">
-                        <option>1 person</option>
-                        <option>2 persons</option>
-                    </select>
+            @if(isBothEvent){
+                <hr>
+                <div class="sub-group">
+                    <div class="form-group">
+                        <p class="h6-text label">Would you come to Wedding Ceremony?</p>
+                        <div class="input-group">
+                            <label><input formControlName="c_attendance" type="radio" value="1">Yes</label>
+                            <label><input formControlName="c_attendance" type="radio" value="0">No</label>
+                        </div>
+                    </div>
+                    @if(rsvpForm.get('c_attendance')?.value == "1"){
+                        <div class="form-group">
+                            <p class="h6-text label">How many persons?</p>
+                            <div class="input-group">
+                                <select formControlName="c_person">
+                                    <option [value]="''" disabled>-- Please choose --</option>
+                                    <option value="1">1 person</option>
+                                    <option value="2">2 persons</option>
+                                </select>
+                            </div>
+                        </div>
+                    }
                 </div>
+            }
+            <div class="footer-group">
+                <button class="my-button" type="submit">Submit</button>
             </div>
-        </div>
-        <hr>
-        <div class="sub-group">
-            <div class="form-group">
-                <p class="h6-text label">Would you come to Holy Matrimony?</p>
-                <div class="input-group">
-                    <label><input type="radio" value="1">Yes</label>
-                    <label><input type="radio" value="0">No</label>
-                </div>
-            </div>
-            <div class="form-group">
-                <p class="h6-text label">How many persons?</p>
-                <div class="input-group">
-                    <select name="matrimony-persons">
-                        <option>1 person</option>
-                        <option>2 persons</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="footer-group">
-            <button class="my-button">Submit</button>
-        </div>
+        </form>
+        } @else if (isSubmitted && (isBothEvent != null)){
+            <div class="summary">
+                <p class="h7-text"><b>Thankyou for confirmations!</b></p>
+                <p> Would you come to Holy Matrimony? </p>
+                <p class="h7-text"> {{m_summary}}</p>
+                @if (isBothEvent) {
+                    <p> Would you come to Wedding Ceremony? </p>
+                    <p class="h7-text"> {{c_summary}}</p>
+                }
+            </div>        
+        } @else {
+            <p>Your link is invalid, please request new link</p>
+        }
     </div>
 </div>

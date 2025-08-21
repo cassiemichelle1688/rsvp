@@ -26,16 +26,19 @@ export class HomeComponent implements OnInit {
 
     guestName: string | null = null;
     date: string | null = null;
+    id: string | null = null;
     homeData: any;
 
     constructor(private route: ActivatedRoute) {}
 
     ngOnInit(): void {
         this.guestName = this.route.snapshot.paramMap.get('name');
+        this.id = this.route.snapshot.paramMap.get('id');
         this.date = '17.01.2026'
         this.homeData = {
             guestName : this.guestName, 
-            date: this.date
+            date: this.date,
+            id: this.id 
         }
     }
 
