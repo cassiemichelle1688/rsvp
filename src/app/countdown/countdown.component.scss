@@ -1,0 +1,52 @@
+@use '../../styles.scss' as styles;
+
+.countdown-grid {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin: 20px 0;
+  flex-wrap: wrap; /* allow wrapping on small screens */
+}
+
+.time-box {
+  // color: styles.$dark-blue;
+  background-color: transparentize($color: styles.$light-gold, $amount: 0.5);
+  padding: 10px 15px;
+  border-radius: 10px;
+  border-color: styles.$light-gold;
+  text-align: center;
+  min-width: 80px;
+  // box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  flex: 1 1 80px; /* allow flexible width */
+}
+
+.time-box .number {
+  display: block;
+  font-size: 2rem;
+  // font-weight: bold;
+}
+
+.time-box .label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.started {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e63946;
+  text-align: center;
+}
+
+/* Responsive: stack vertically on screens smaller than 500px */
+@media (max-width: 500px) {
+  .countdown-grid {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .time-box {
+    width: 40%; /* optional: make boxes smaller on mobile */
+    margin-bottom: 10px;
+  }
+}

@@ -11,19 +11,20 @@
                 <div class="form-group">
                     <p class="h6-text label">Would you come to Holy Matrimony?</p>
                     <div class="input-group">
-                        <label><input formControlName="m_attendance" type="radio" value="1">Yes</label>
-                        <label><input formControlName="m_attendance" type="radio" value="0">No</label>
+                        <label><input formControlName="m_attendance" type="radio" value="Yes">Yes</label>
+                        <label><input formControlName="m_attendance" type="radio" value="No">No</label>
                     </div>
                 </div>
-                @if(rsvpForm.get('m_attendance')?.value == "1"){
+                @if(rsvpForm.get('m_attendance')?.value == "Yes"){
                     <div class="form-group">
                         <p class="h6-text label">How many persons?</p>
-                        <div class="input-group">
-                            <select formControlName="m_person">
+                        <div class="input-group input-with-suffix">
+                            <input class="input-field" formControlName="m_person" type="number" min="1" max="5" (change)="numberInput()">
+                            <!-- <select formControlName="m_person">
                                 <option [value]="''" disabled>-- Please choose --</option>
                                 <option value="1">1 person</option>
                                 <option value="2">2 persons</option>
-                            </select>
+                            </select> -->
                         </div>
                     </div>
                 }
@@ -34,11 +35,11 @@
                     <div class="form-group">
                         <p class="h6-text label">Would you come to Wedding Ceremony?</p>
                         <div class="input-group">
-                            <label><input formControlName="c_attendance" type="radio" value="1">Yes</label>
-                            <label><input formControlName="c_attendance" type="radio" value="0">No</label>
+                            <label><input formControlName="c_attendance" type="radio" value="Yes">Yes</label>
+                            <label><input formControlName="c_attendance" type="radio" value="No">No</label>
                         </div>
                     </div>
-                    @if(rsvpForm.get('c_attendance')?.value == "1"){
+                    @if(rsvpForm.get('c_attendance')?.value == "Yes"){
                         <div class="form-group">
                             <p class="h6-text label">How many persons?</p>
                             <div class="input-group">
@@ -54,16 +55,21 @@
             }
             <div class="footer-group">
                 <button class="my-button" type="submit">Submit</button>
+                @if (!(errorMessage == null || errorMessage == undefined || errorMessage == "")) { {{ errorMessage }} }
             </div>
         </form>
         } @else if (isSubmitted && (isBothEvent != null)){
             <div class="summary">
-                <p class="h7-text"><b>Thankyou for confirmations!</b></p>
-                <p> Would you come to Holy Matrimony? </p>
-                <p class="h7-text"> {{m_summary}}</p>
+                <p class="center-text"><b>Thankyou for confirmations!</b></p>
+                <div class="summary-detail">
+                    <p class="h7-text"> Holy Matrimony </p>
+                    <p class="h7-text"> {{m_summary}}</p>
+                </div>
                 @if (isBothEvent) {
-                    <p> Would you come to Wedding Ceremony? </p>
+                <div class="summary-detail">
+                    <p class="h7-text"> Wedding Ceremony </p>
                     <p class="h7-text"> {{c_summary}}</p>
+                </div>
                 }
             </div>        
         } @else {

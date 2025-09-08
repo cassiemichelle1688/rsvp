@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MapModalService } from '../services/map-modal.service';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-schedule',
@@ -9,9 +10,21 @@ import { MapModalService } from '../services/map-modal.service';
   templateUrl: './schedule.component.html',
   styleUrl: './schedule.component.scss'
 })
-export class ScheduleComponent {
+export class ScheduleComponent implements OnInit{
+  isBothEvent: boolean | undefined;
 
   constructor(private mapModalService: MapModalService) {}
+
+  @Input() dataFromHome: any; 
+
+  ngOnInit(): void {
+    const id = this.dataFromHome.id;
+    if (id == environment.all_token) {
+      this.isBothEvent = true;
+    } else if (id == environment.m_only_token) {
+      this.isBothEvent = false;
+    }
+  }
 
   showLocation1OnMap(): void {
     // Call the service's open method with the desired coordinates

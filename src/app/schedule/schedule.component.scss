@@ -15,11 +15,12 @@
     padding: 0px 2vw 24px 2vw;
     text-align: center;
     width: 30vw;
+    // box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 button {
-    color: styles.$dark-blue;
-    background-color: styles.$light-blue;
+    color: wheat;
+    background-color: styles.$dark-brown;
     padding: 12px 24px;
 }
 

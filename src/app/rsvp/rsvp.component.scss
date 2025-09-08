@@ -18,6 +18,7 @@
     border-radius: 20px;
     padding: 2% 4%;
     margin: 4% 0px;
+    // box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .form-group{
@@ -40,18 +41,54 @@
 }
 
 button {
-    color: styles.$dark-red;
-    background-color: styles.$light-pink;
+    color: wheat;
+    background-color: styles.$dark-brown;
     padding: 12px 24px;
+}
+
+.input-field {
+    padding: 2px 0px 2px 10px;
+    border-radius: 6px;
+    font-family: 'Mali' !important;
+    font-size: 16px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.input-with-suffix{
+    gap: 3.5vw !important;
+}
+
+.input-with-suffix::after{
+    content: "persons"; /* Spasi di depan agar ada jarak */
+    color: #555; /* Warna teks suffix */
+    pointer-events: none;
 }
 
 .footer-group {
     margin-top: 4vw; 
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+
+.summary{
+    margin: 0px 20vw;
+    .center-text{
+        text-align: center;
+    }
+}
+
+.summary-detail{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: transparentize(styles.$light-gold, 0.5); 
+    margin: 10px 0px;
+    padding: 0px 10px;
+    border-radius: 5px;
 }
 
 @media screen and (max-width:600px) {
@@ -77,6 +114,10 @@ button {
         flex-direction: column;
         align-items: flex-start;
         row-gap: 20px;
+    }
+
+    .summary{
+        margin: 0px 2vw;
     }
 
 }

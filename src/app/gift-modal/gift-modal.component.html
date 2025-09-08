@@ -1,0 +1,31 @@
+@if(isOpen){
+  <div class="modal-backdrop" (click)="close()"></div>
+  <div class="modal">
+    <button class="close-button" (click)="close()">&times;</button>
+    @if(data.type == "GIFT"){
+      <h2>Wedding Gift</h2>
+      <p>Send your gift to this location</p>
+      <p>📌 Bandung, 
+        @if (!isCopied){
+          <button (click)="copyText()" class="copy-text">Copy location</button>
+        }@else {
+          Copied 🎉
+        }
+      </p>
+    }@else if(data.type == "TRANSFER"){
+      <h2>Bank Transfer</h2>
+      <p>⇄ BCA, 
+        @if (!isCopied){
+          <button (click)="copyText()" class="copy-text">Copy account no</button>
+        }@else {
+          Copied 🎉
+        }
+      </p>
+      <p>⇄ BLU, Scan this QR ⬇️ <br>
+      <img ngSrc="../../assets/image/QR_Blu.png" width="270" height="250">
+    }
+    
+      
+  </div>
+}
+

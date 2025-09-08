@@ -21,8 +21,8 @@
 .about-desc{
     padding: 5vw;
     background-image: url(../../assets/bg/bg_aboutUs_transparant.jpg) !important;
-    background-size:100%;
-    background-repeat: no-repeat;
+    background-size: 100%;
+    background-repeat: repeat-y;
 }
 
 .name-container{
@@ -38,7 +38,7 @@
     .container {
         display: flex;
         flex-direction: column;
-        gap: 2.5vw;
+        gap: 2vw;
     }
 
     .image-carousel{
@@ -56,4 +56,11 @@
         margin: 2vw auto;
         width: 95% !important;
     }
+
+    .about-desc{
+        background-image: url(../../assets/bg/bg_aboutUs_transparant_small.png) !important;
+        background-size:100%;
+        background-repeat:repeat-y;
+    }
+
 }

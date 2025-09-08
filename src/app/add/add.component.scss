@@ -24,8 +24,7 @@
 
 .countdown-section {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
 }
 
 .gift {
@@ -33,19 +32,27 @@
     border-radius: 10px;
     width: 14vw;
     text-align: center;
+    // box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+    .icon {
+        margin-top: 10px;
+    }
+    .h7-text {
+        margin-top: 0px;
+    }
 }
 
 button {
-    color: styles.$dark-blue;
-    background-color: styles.$light-blue;
+    color: wheat ;
+    background-color: styles.$dark-brown;
     padding: 12px 24px;
-    margin-top: 4vw;
 }
 
 @media screen and (max-width:600px) {
     .container-row{
         flex-direction: column;
         gap: 10px;
+        justify-content: space-around ;
     }
     
     .vertical-line{
@@ -58,5 +65,10 @@ button {
 
     .gift{
         width: 44vw;
+    }
+    
+    .gift-section, .countdown-section{
+        width: 100%;
+        margin: 0% 2%;
     }
 }

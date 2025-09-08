@@ -5,10 +5,11 @@
     <div class="wish-section">
         <p class="title-text">Send Wishes</p>
         <p class="h6-text">Thank you for your beautiful wishes & prayers</p>
-        <div class="form-group">
+        <form class="form-group" [formGroup]="wishForm" (ngSubmit)="onSubmit()">
             <p>From: {{guestName}}</p>
-            <textarea type="text" placeholder="Messages..."></textarea>
-        </div>
-        <button class="my-button">Send</button>
+            <textarea type="text" placeholder="Messages..." formControlName="message"></textarea>
+            <p>{{successMessage}}{{errorMessage}}</p>
+        </form>
+        <button class="my-button" (click)="onSubmit()">Send</button>
     </div>
 </div>

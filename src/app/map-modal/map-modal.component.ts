@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit, Inject, PLATFORM_ID, AfterViewInit } from
 import { isPlatformBrowser, CommonModule } from '@angular/common'; // 2. Import isPlatformBrowser
 import { Subscription } from 'rxjs';
 import { MapLocation, MapModalService } from '../services/map-modal.service';
+import { ModalService } from '../services/modal.service';
 
 
 // We will import Leaflet dynamically to avoid loading it on the server at all
