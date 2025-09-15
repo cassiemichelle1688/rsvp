@@ -5,13 +5,15 @@
             <p class="h7-text">Your gift will be treasured in our heart</p>
         </div>
         <div class="gift-section">
-            <div class="gift" (click)="openModalGift()">
-                <img class="icon" ngSrc="../../assets/icons/gift.png" width="24" height="24">
-                <p class="h7-text">Send Gift</p>
+            <div class="gift" (click)="openModalGift()" data-aos="zoom-in" data-aos-duration="5000">
+                <!-- <img class="icon" ngSrc="../../assets/icons/gift.png" width="24" height="24"> -->
+                <p style="font-size: 24px; line-height: 0px;">🎁</p>
+                <p class="h7-text"><b>Send Gift</b></p>
             </div>
-            <div class="gift" (click)="openModalTransfer()">
-                <img class="icon" ngSrc="../../assets/icons/wallet.png" width="24" height="24">
-                <p class="h7-text">Bank Transfer</p>
+            <div class="gift" (click)="openModalTransfer()" data-aos="zoom-in" data-aos-duration="5000">
+                <!-- <img class="icon" ngSrc="../../assets/icons/wallet.png" width="24" height="24"> -->
+                 <p style="font-size: 24px; line-height: 0px;">🏦</p>
+                <p class="h7-text"><b>Bank Transfer</b></p>
             </div>
         </div>
     </div>
@@ -22,7 +24,7 @@
         </div>
         <div class="countdown-section">
             <app-countdown targetDate="2026-01-17T09:00:00"></app-countdown>
-            <button class="my-button" (click)="saveToCalendar()">Add to calendar</button>
+            <button class="button-primary" (click)="saveToCalendar()">Add to calendar</button>
         </div>
     </div>
 </div>

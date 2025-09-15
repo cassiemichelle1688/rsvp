@@ -7,7 +7,7 @@
       <p>Send your gift to this location</p>
       <p>📌 Bandung, 
         @if (!isCopied){
-          <button (click)="copyText()" class="copy-text">Copy location</button>
+          <button (click)="copyText()" class="copy-text copy-location-button">Copy location</button>
         }@else {
           Copied 🎉
         }
@@ -16,7 +16,7 @@
       <h2>Bank Transfer</h2>
       <p>⇄ BCA, 
         @if (!isCopied){
-          <button (click)="copyText()" class="copy-text">Copy account no</button>
+          <button (click)="copyText()" class="copy-text copy-location-button">Copy account no</button>
         }@else {
           Copied 🎉
         }

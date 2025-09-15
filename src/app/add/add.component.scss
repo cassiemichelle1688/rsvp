@@ -25,10 +25,11 @@
 .countdown-section {
     display: flex;
     flex-direction: column;
+    padding: 0px 2.6rem;
 }
 
 .gift {
-    border: 1px solid styles.$light-gold;
+    border: 2px solid styles.$light-gold;
     border-radius: 10px;
     width: 14vw;
     text-align: center;
@@ -43,12 +44,18 @@
 }
 
 button {
-    color: wheat ;
-    background-color: styles.$dark-brown;
+    // color: wheat ;
+    // background-color: styles.$dark-brown;
     padding: 12px 24px;
 }
 
 @media screen and (max-width:600px) {
+
+    .countdown-section {
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+    }
     .container-row{
         flex-direction: column;
         gap: 10px;

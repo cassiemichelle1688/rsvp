@@ -4,7 +4,9 @@ $dark-red: #94293D;
 $light-gold: #F4EADC;
 $dark-blue: #015282;
 $light-blue: #BFDAEA;
-$dark-brown: #492111;
+$dark-brown: #4b2e2e;
+$title-color: #5c5c5c;
+$font-color: #1a1a1a;
 
 body {
     font-family: 'Mali';
@@ -12,17 +14,18 @@ body {
     position: relative;
 }
 
-.my-button {
-    font-family: 'Mali';
-    padding: 14px 36px;
-    border-radius: 24px;
-    border-style: none;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
+// .my-button {
+//     font-family: 'Mali';
+//     padding: 14px 36px;
+//     border-radius: 24px;
+//     border-style: none;
+//     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+// }
 
 .title-text{
     font-size: 30px;
     line-height: 10px;
+    color: $title-color;
 }
 
 .subtitle-text{
@@ -54,11 +57,13 @@ hr {
     margin-top: 40px;
 }
 
-.h5-text { font-size: 24px;}
+.h5-text { font-size: 24px; color: $font-color;}
 
-.h6-text { font-size: 18px;}
+.h6-text { font-size: 18px; color: $font-color;}
 
-.h7-text { font-size: 14px;}
+.h7-text { font-size: 14px; color: $font-color;}
+
+p { color: $font-color; }
 
 select {
     width: 16vw;
@@ -68,4 +73,33 @@ select {
     font-size: 16px;
     -webkit-appearance: none;
     appearance: none;
+}
+
+.button-primary {
+    font-family: 'Mali';
+    background-color: #d88ca5; /* romantic pink */
+    color: #fffaf4; /* ivory text */
+    border: none;
+    border-radius: 2rem; /* pill shape */
+    padding: 0.75rem 2rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-primary:hover {
+    background-color: #c46a87; /* deeper pink */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(196, 106, 135, 0.4);
+}
+
+.button:disabled {
+  background-color: #f3dce2 !important; /* pale muted pink */
+  color: #b39a9f !important; /* soft taupe text */
+  border: none;
+  cursor: not-allowed;
+  opacity: 0.7;
+  box-shadow: none;
+  transform: none;
 }

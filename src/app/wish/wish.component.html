@@ -1,5 +1,5 @@
 <div class="container-row">
-    <div class="image">
+    <div class="image" data-aos="flip-left" data-aos-duration="5000">
         <img ngSrc="../../assets/image/Image 3.png" width="300" height="300">
     </div>
     <div class="wish-section">
@@ -10,6 +10,6 @@
             <textarea type="text" placeholder="Messages..." formControlName="message"></textarea>
             <p>{{successMessage}}{{errorMessage}}</p>
         </form>
-        <button class="my-button" (click)="onSubmit()">Send</button>
+        <button class="button-primary" (click)="onSubmit()">Send</button>
     </div>
 </div>

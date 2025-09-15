@@ -1,28 +1,32 @@
 <div class="container-column">
     <div class="title-section">
         <p class="title-text">Schedule</p>
+        <p>“Love is made even more beautiful when shared with family and friends. 
+            <br>Thank you for being here.”</p>
     </div>
     <div class="container">
-        <div class="sub-section">
-            <p class="h5-text">Holy Matrimony</p>
-            <p class="h7-text">17 January 2025, 09:00 - 10:00</p> 
-            <p class="h6-text">
+        <div class="sub-section" data-aos="fade-right" data-aos-duration="5000">
+            <p class="title-text-card">✞ Holy Matrimony</p>
+            <p class="subtitle2-text-card">17 January 2025, 09:00 - 10:00</p> 
+            <p class="subtitle3-text-card">
                 <b>Gereja St. Laurentius</b>
-                <br>
+            </p>
+            <p class="subtitle1-text-card">
                 Jl. Sukajadi No.223, Gegerkalong, Kec. Sukasari, Kota Bandung
             </p>
-            <button class="my-button" (click)="showLocation1OnMap()">See location</button>
+            <button class="button-primary" (click)="showLocation1OnMap()">See location</button>
         </div>
         @if(isBothEvent){
-        <div class="sub-section">
-            <p class="h5-text">Wedding Reception</p>
-            <p class="h7-text">17 January 2025, 12:30 - End</p> 
-            <p class="h6-text">
+        <div class="sub-section" data-aos="fade-left" data-aos-duration="5000">
+            <p class="title-text-card">🍽 Wedding Reception</p>
+            <p class="subtitle2-text-card">17 January 2025, 12:30 - End</p> 
+            <p class="subtitle3-text-card">
                 <b>Royal Dynasty Lt. 2</b>
-                <br>
+            </p>
+            <p class="subtitle1-text-card">
                 Gedung Graha Sudirman, Jl. Jend. Sudirman No. 232A, Kota Bandung
             </p>
-            <button class="my-button" (click)="showLocation2OnMap()">See location</button>
+            <button class="button-primary" (click)="showLocation2OnMap()">See location</button>
         </div>
         }
     </div>

@@ -1,17 +1,36 @@
 <div class="main-container">
     <app-title 
+        data-aos="zoom-in"
+        data-aos-duration="5000"
         [dataFromHome]="homeData" 
         (scrollToAbout)="onScrollToAbout()">
     </app-title>
     <hr> 
-    <app-about #aboutSection></app-about>
+    <app-about 
+        #aboutSection
+        data-aos="fade-in"
+        data-aos-duration="5000">
+    </app-about>
     <hr>
-    <app-schedule [dataFromHome]="homeData"></app-schedule>
-    <app-rsvp [dataFromHome]="homeData"></app-rsvp>
+    <app-schedule 
+        [dataFromHome]="homeData"
+        data-aos="zoom-in"
+        data-aos-duration="5000">
+    </app-schedule>
+    <app-rsvp 
+        [dataFromHome]="homeData"
+        data-aos="zoom-in"
+        data-aos-duration="5000">
+    </app-rsvp>
     <hr>
-    <app-add></app-add>
+    <app-add>
+    </app-add>
     <hr>
-    <app-wish [dataFromHome]="homeData"></app-wish>
+    <app-wish 
+        [dataFromHome]="homeData"
+        data-aos="zoom-in"
+        data-aos-duration="5000">
+    </app-wish>
     <footer>
         <p>created with love by Kevin & Cassie ❤️</p>
     </footer>

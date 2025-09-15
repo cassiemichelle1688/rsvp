@@ -1,24 +1,44 @@
 <div class="container-column">
+    <!-- Wedding Quote Section -->
+    <div class="wedding-quote" data-aos="zoom-in" data-aos-duration="5000">
+        <div class="quote-card">
+            <p class="quote-text">
+            “I have found the one whom my soul loves.”
+            </p>
+            <p class="quote-ref">— Song of Solomon 3:4</p>
+        </div>
+    </div>
     <div class="title-section container-row">
         <span class="title-text">RSVP</span>
         <span class="h6-text">I’m grateful to invite you to this event, </span>
     </div>
-    <div class="container-form">
+    <div class="container-form" data-aos="zoom-in-up" data-aos-duration="5000">
         @if (!isSubmitted && (isBothEvent != null)) {
         <p class="h7-text"><b>Dear Mr./Mrs./Ms. {{ guestName }}</b>, please confirm your attendence</p>
         <form [formGroup]="rsvpForm" (ngSubmit)="onSubmit()">
             <div class="sub-group">
                 <div class="form-group">
-                    <p class="h6-text label">Would you come to Holy Matrimony?</p>
-                    <div class="input-group">
-                        <label><input formControlName="m_attendance" type="radio" value="Yes">Yes</label>
-                        <label><input formControlName="m_attendance" type="radio" value="No">No</label>
+                    <p class="h6-text label question">Would you come to Holy Matrimony?</p>
+                    <div class="input-group pill-group" role="radiogroup" aria-label="Attendance">
+                        <label class="pill">
+                            <input type="radio" formControlName="m_attendance" value="Yes" />
+                            <span>💖 Yes</span>
+                        </label>
+
+                        <label class="pill">
+                            <input type="radio" formControlName="m_attendance" value="No" />
+                            <span>😢 No</span>
+                        </label>
                     </div>
+                    <!-- <div class="input-group">
+                        <label><input formControlName="m_attendance" type="radio" value="Yes">💖 Yes</label>
+                        <label><input formControlName="m_attendance" type="radio" value="No">😢 No</label>
+                    </div> -->
                 </div>
                 @if(rsvpForm.get('m_attendance')?.value == "Yes"){
                     <div class="form-group">
                         <p class="h6-text label">How many persons?</p>
-                        <div class="input-group input-with-suffix">
+                        <div class="input-group input-with-suffix styled-number">
                             <input class="input-field" formControlName="m_person" type="number" min="1" max="5" (change)="numberInput()">
                             <!-- <select formControlName="m_person">
                                 <option [value]="''" disabled>-- Please choose --</option>
@@ -32,21 +52,31 @@
             @if(isBothEvent){
                 <hr>
                 <div class="sub-group">
-                    <div class="form-group">
-                        <p class="h6-text label">Would you come to Wedding Ceremony?</p>
-                        <div class="input-group">
-                            <label><input formControlName="c_attendance" type="radio" value="Yes">Yes</label>
-                            <label><input formControlName="c_attendance" type="radio" value="No">No</label>
+                    <div class="form-group" >
+                        <p class="h6-text label question">Would you come to Wedding Ceremony?</p>
+                        <div class="input-group pill-group" role="radiogroup" aria-label="Attendance">
+                            <label class="pill">
+                                <input type="radio" formControlName="c_attendance" value="Yes" />
+                                <span>💖 Yes</span>
+                            </label>
+                            <label class="pill">
+                                <input type="radio" formControlName="c_attendance" value="No" />
+                                <span>😢 No</span>
+                            </label>
                         </div>
+                        <!-- <div class="input-group">
+                            <label><input formControlName="c_attendance" type="radio" value="Yes">💖 Yes</label>
+                            <label><input formControlName="c_attendance" type="radio" value="No">😢 No</label>
+                        </div> -->
                     </div>
                     @if(rsvpForm.get('c_attendance')?.value == "Yes"){
                         <div class="form-group">
                             <p class="h6-text label">How many persons?</p>
-                            <div class="input-group">
+                            <div class="input-group styled-select">
                                 <select formControlName="c_person">
                                     <option [value]="''" disabled>-- Please choose --</option>
-                                    <option value="1">1 person</option>
-                                    <option value="2">2 persons</option>
+                                    <option value="1">👩 1 person</option>
+                                    <option value="2">👩‍❤️‍👨 2 persons</option>
                                 </select>
                             </div>
                         </div>
@@ -54,8 +84,10 @@
                 </div>
             }
             <div class="footer-group">
-                <button class="my-button" type="submit">Submit</button>
-                @if (!(errorMessage == null || errorMessage == undefined || errorMessage == "")) { {{ errorMessage }} }
+                <button class="button-primary" type="submit">Submit</button>
+                <p>
+                     @if (!(errorMessage == null || errorMessage == undefined || errorMessage == "")) { {{ errorMessage }} }
+                </p>
             </div>
         </form>
         } @else if (isSubmitted && (isBothEvent != null)){

@@ -34,9 +34,30 @@
   z-index: 1001;
 }
 
-.copy-text{
-  font-family: 'Mali';
+.copy-location-button {
+  /* Tampilan dasar tombol */
+  background-color: #d88ca5;;
+  border-radius: 5px;
   border: 0px;
-  background-color: styles.$dark-brown;
-  color: wheat;
+  color: #ffff;
+  padding: 5px 10px;
+  font-family: "Mali";
+  font-size: 14px;
+  cursor: pointer;
+  
+  /* Hindari efek 'pressed' default browser */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Efek saat tombol dihover (mouse di atas tombol) */
+.copy-location-button:hover {
+  background-color: #d0d0d0;
+}
+
+/* Efek saat tombol ditekan */
+.copy-location-button:active {
+  background-color: #c0c0c0;
+  transform: translateY(1px); /* Efek tombol tertekan ke bawah */
 }

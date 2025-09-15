@@ -1,11 +1,13 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { AfterViewInit, Component, ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { ActivatedRoute, NavigationEnd, Event, Router } from '@angular/router';
 import { TitleComponent } from '../title/title.component';
 import { AboutComponent } from '../about/about.component';
 import { ScheduleComponent } from '../schedule/schedule.component';
 import { RsvpComponent } from '../rsvp/rsvp.component';
 import { AddComponent } from '../add/add.component';
 import { WishComponent } from '../wish/wish.component';
+import * as AOS from 'aos';
 
 @Component({
     selector: 'app-home',
@@ -22,14 +24,37 @@ import { WishComponent } from '../wish/wish.component';
     styleUrl: './home.component.scss'
 })
 
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
 
     guestName: string | null = null;
     date: string | null = null;
     id: string | null = null;
     homeData: any;
 
-    constructor(private route: ActivatedRoute) {}
+    constructor(
+        private route: ActivatedRoute,
+        private router: Router,
+        @Inject(PLATFORM_ID) private platformId: Object,
+    ) {}
+
+    ngAfterViewInit(){
+        if (isPlatformBrowser(this.platformId)) {
+           AOS.init({
+                duration: 800,
+                once: false,   // set true if you want animation only once
+            });
+
+            // Important: refresh after init to catch Angular rendering
+            setTimeout(() => {
+                AOS.refresh();
+            }, 100);
+            // this.router.events.subscribe((event: Event) => {
+            //     if (event instanceof NavigationEnd) {
+            //     AOS.refresh();
+            //     }
+            // });
+        }
+    }
 
     ngOnInit(): void {
         this.guestName = this.route.snapshot.paramMap.get('name');

@@ -32,9 +32,167 @@ img {
 
 button {
     margin-top: 22px;
-    color: styles.$dark-red;
-    background-color: styles.$light-pink;
+    // color: styles.$dark-red;
+    // background-color: styles.$light-pink;
 }
+
+.title-text{
+    font-size: 20px !important;
+}
+
+.wedding-names {
+    font-size: 3.2em !important;
+    font-family: "Dancing Script", cursive;
+    line-height: 50%;
+}
+
+/* Posisi kontainer dan kelopak */
+.petals-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  overflow: hidden; /* Penting untuk menyembunyikan kelopak di luar area */
+  pointer-events: none; /* Mencegah kelopak menghalangi interaksi mouse */
+  z-index: 1000; /* Pastikan kelopak ada di atas konten lain */
+}
+
+.petal {
+  position: absolute;
+//   background-color: #ffb6c1; /* Warna merah muda lembut */
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: fall linear infinite;
+}
+
+/* Ukuran dan warna kelopak yang bervariasi */
+.petal:nth-child(1) {
+    width: 28px;
+    height: 28px;
+    left: 10%;
+    animation-duration: 10s;
+    animation-delay: 0s;
+    background-image: url(../../assets/image/petals-1.png);
+    background-size:100%;
+    background-repeat: no-repeat;
+}
+
+.petal:nth-child(2) {
+    width: 32px;
+    height: 32px;
+    left: 25%;
+    background-image: url(../../assets/image/petals-2.png);
+    animation-duration: 8s;
+    animation-delay: 2s;
+    background-size:100%;
+    background-repeat: no-repeat;
+}
+
+.petal:nth-child(3) {
+    width: 40px;
+    height: 40px;
+    left: 40%;
+    background-image: url(../../assets/image/petals-3.png);
+    animation-duration: 12s;
+    animation-delay: 4s;
+    background-size:100%;
+    background-repeat: no-repeat;
+}
+
+/* Kelopak 4 */
+.petal:nth-child(4) {
+  width: 30px; height: 30px;
+  left: 55%;
+  animation-duration: 9s;
+  animation-delay: 1s;
+  background-image: url(../../assets/image/petals-4.png);
+  background-size:100%;
+    background-repeat: no-repeat;
+}
+
+/* Kelopak 5 */
+.petal:nth-child(5) {
+  width: 24px; height: 24px;
+  left: 70%;
+  animation-duration: 11s;
+  animation-delay: 3s;
+  background-image: url(../../assets/image/petals-5.png);
+  background-size:100%;
+    background-repeat: no-repeat;
+}
+
+/* Kelopak 6 */
+.petal:nth-child(6) {
+  width: 42px; height: 42px;
+  left: 85%;
+  animation-duration: 13s;
+  animation-delay: 5s;
+  background-image: url(../../assets/image/petals-6.png);
+  background-size:100%;
+    background-repeat: no-repeat;
+}
+
+/* Kelopak 7 */
+.petal:nth-child(7) {
+  width: 50px; height: 50px;
+  left: 5%;
+  animation-duration: 7s;
+  animation-delay: 0.5s;
+  background-image: url(../../assets/image/petals-7.png);
+  background-size:100%;
+    background-repeat: no-repeat;
+}
+
+/* Kelopak 8 */
+.petal:nth-child(8) {
+  width: 26px; height: 26px;
+  left: 30%;
+  animation-duration: 15s;
+  animation-delay: 6s;
+  background-image: url(../../assets/image/petals-8.png);
+  background-size:100%;
+    background-repeat: no-repeat;
+}
+
+/* Kelopak 9 */
+.petal:nth-child(9) {
+  width: 18px; height: 18px;
+  left: 60%;
+  animation-duration: 9.5s;
+  animation-delay: 2.5s;
+  background-image: url(../../assets/image/petals-9.png);
+  background-size:100%;
+    background-repeat: no-repeat;
+}
+
+/* Kelopak 10 */
+.petal:nth-child(10) {
+  width: 44px; height: 44px;
+  left: 75%;
+  animation-duration: 10.5s;
+  animation-delay: 4.5s;
+  background-image: url(../../assets/image/petals-10.png);
+  background-size:100%;
+    background-repeat: no-repeat;
+}
+/* Tambahkan variasi untuk kelopak lainnya... */
+
+/* Definisi animasi jatuh */
+@keyframes fall {
+  0% {
+    transform: translateY(-100%) rotate(0deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
 
 @media screen and (max-width:600px) {
 

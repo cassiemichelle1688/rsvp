@@ -2,12 +2,12 @@
 
 /* Add button styles from Method 1 if you like */
 .map-button {
-  padding: 10px 20px;
-  background-color: #1a73e8;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 10px 20px !important;
+  background-color: #1a73e8 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
 }
 
 /* Modal styles */
@@ -56,10 +56,6 @@
   flex-direction: column;
   padding-top: 10px;
   align-items: center;
-  button{
-    color: wheat;
-    background-color: styles.$dark-brown;
-  }
 }
 
 /* ... your existing modal styles ... */

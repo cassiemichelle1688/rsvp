@@ -39,10 +39,11 @@ export class WishComponent {
   ngOnInit(): void {
     this.guestName = this.dataFromHome.guestName;
     this.date = this.dataFromHome.date;
-    this.wishForm.get("name")?.setValue(this.guestName);
   }
   
   onSubmit() {
+    this.wishForm.get("name")?.setValue(this.guestName);
+
     if (this.wishForm.invalid) {
       console.log("masih invalid: ", this.logValidationErrors())
       return; // Don't submit if form is invalid
@@ -63,18 +64,29 @@ export class WishComponent {
             this.isSubmitted = true;
             this.successMessage = 'Thank you! Your message has been sent.';
             this.isLoading = false;
-            this.isSubmitted = true;
             this.wishForm.reset();
           } else {
             // This would be an error returned from the script itself
             this.errorMessage = `An error occurred: ${response.message || 'Unknown error'}`;
           }
+          setTimeout(() => {
+            this.isSubmitted = false;
+            this.successMessage = null;
+            this.errorMessage = null;
+          }, 2000); // Reset after 2 seconds
+
         },
         error: (error) => {
           // This is a network-level error
           this.errorMessage = `Failed to send message.`;
+          setTimeout(() => {
+            this.isSubmitted = false;
+            this.errorMessage = null;
+          }, 2000); // Reset after 2 seconds
         }
       });
+
+    
   }
 
   // Create this new helper method

@@ -124,7 +124,7 @@ export class RsvpComponent implements OnInit{
         },
         error: (error) => {
           // This is a network-level error
-          this.errorMessage = `Failed to send message.`;
+          this.errorMessage = `Failed to submit.`;
         }
       });
   }

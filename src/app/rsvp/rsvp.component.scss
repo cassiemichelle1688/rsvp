@@ -13,8 +13,12 @@
     align-self: center;
 }
 
+.question{
+    width: 45vw;
+}
+
 .container-form{
-    border: 1px solid styles.$light-gold;
+    border: 2px solid styles.$light-gold;
     border-radius: 20px;
     padding: 2% 4%;
     margin: 4% 0px;
@@ -41,8 +45,8 @@
 }
 
 button {
-    color: wheat;
-    background-color: styles.$dark-brown;
+    // color: wheat;
+    // background-color: styles.$dark-brown;
     padding: 12px 24px;
 }
 
@@ -56,13 +60,14 @@ button {
 }
 
 .input-with-suffix{
-    gap: 3.5vw !important;
+    gap: 34px !important;
 }
 
 .input-with-suffix::after{
     content: "persons"; /* Spasi di depan agar ada jarak */
     color: #555; /* Warna teks suffix */
     pointer-events: none;
+    margin-top: 6px;
 }
 
 .footer-group {
@@ -91,7 +96,192 @@ button {
     border-radius: 5px;
 }
 
+.pill-group {
+  display: inline-flex;
+  background: transparent;
+  border-radius: 999px;
+  padding: 6px;
+  gap: 6px;
+}
+
+.pill {
+  position: relative;
+  display: inline-block;
+}
+
+.pill input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pill span {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #fff;
+  border: 2px solid #fdebf0;
+  font-family: 'Mali';
+  font-weight: 600;
+  color: #7a6a6a;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  transition: transform .15s ease, background .18s ease, color .18s ease;
+}
+
+/* checked visual */
+.pill input:checked + span {
+  background: linear-gradient(90deg,#ffd9e0,#ffcbd0);
+  color: #5a2b3a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255,182,193,0.16);
+}
+
+/* focus */
+.pill input:focus + span {
+  outline: 3px solid rgba(255,182,193,0.18);
+  outline-offset: 3px;
+}
+
+.styled-select {
+  position: relative;
+  display: inline-block;
+}
+
+.styled-select select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 10px 40px 10px 16px;
+  border-radius: 999px;
+  border: 2px solid #fdebf0;
+  background: #fff;
+  color: #7a6a6a;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  transition: border-color .2s, box-shadow .2s;
+}
+
+/* Arrow */
+.styled-select::after {
+  content: "▼";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #c28c91;
+  pointer-events: none;
+}
+
+/* Focus state */
+.styled-select select:focus {
+  outline: none;
+  border-color: #ffcbd0;
+  box-shadow: 0 0 0 3px rgba(255,182,193,0.2);
+}
+
+/* ===========================
+   Matching Number input
+   =========================== */
+.styled-number input {
+  width: 60px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 2px solid #fdebf0;
+  background: #fff;
+  font-weight: 500;
+  font-size: 15px;
+  color: #7a6a6a;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  transition: border-color .2s, box-shadow .2s;
+}
+
+
+hr {
+    display: block;
+    border-top: 1px solid styles.$light-gold;
+    margin: 1rem 0px;
+}
+
+// /* Remove default arrows in Chrome */
+// .styled-number input::-webkit-outer-spin-button,
+// .styled-number input::-webkit-inner-spin-button {
+//   -webkit-appearance: none;
+//   margin: 0;
+// }
+
+// /* Remove default arrows in Firefox */
+// .styled-number input[type=number] {
+//   -moz-appearance: textfield;
+// }
+
+/* Focus */
+.styled-number input:focus {
+  outline: none;
+  border-color: #ffcbd0;
+  box-shadow: 0 0 0 3px rgba(255,182,193,0.2);
+}
+
+select{
+    width: 196px !important;
+}
+
+/* Wedding Quote Section */
+.wedding-quote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  background: rgba(255, 240, 245, 0.4); /* soft pink overlay */
+//   background-image: url('assets/petals.png'); /* optional */
+//   background-size: cover;
+//   background-position: center;
+}
+
+.quote-card {
+  background: #fffdfd;
+  border: 2px solid #f3d9e2; /* soft pastel pink border */
+  border-radius: 20px;
+  padding: 2rem 3rem;
+  max-width: 700px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  font-family: 'Dancing Script', cursive; /* Handwritten romantic font */
+  position: relative;
+}
+
+.quote-card::before {
+  content: "❦";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #d4a373; /* gold/brown accent */
+}
+
+.quote-text {
+  font-size: 1.6rem;
+  color: #5a3e36; /* dark romantic brown */
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.quote-ref {
+  font-size: 1rem;
+  color: #a67c68; /* softer brown/gold */
+  font-style: italic;
+}
+
+
 @media screen and (max-width:600px) {
+    .question{
+        width: 100% !important;
+    }
+
     .container-column {
         padding: 0px 5vw;
     }
@@ -100,14 +290,6 @@ button {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-    }
-
-    select {
-        width: 70vw !important;
-    }
-
-    button {
-        margin-bottom: 20px;
     }
 
     .container-row{
