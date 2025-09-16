@@ -37,10 +37,15 @@
             "scripts": [
               "node_modules/aos/dist/aos.js"
             ],
-            "server": "src/main.server.ts"
+            "server": "src/main.server.ts",
+            "prerender": false,
+            "ssr": {
+              "entry": "src/server.ts"
+            }
           },
           "configurations": {
             "production": {
+              "prerender": false,
               "optimization": {
                 "scripts": true,
                 "styles": true,
