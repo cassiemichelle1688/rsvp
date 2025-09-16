@@ -9,7 +9,10 @@ import bootstrap from './src/main.server';
 export function app(): express.Express {
   const server = express();
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
-  const browserDistFolder = resolve(serverDistFolder, '../browser');
+  // emulate __dirname in ESM
+  const __dirname = dirname(fileURLToPath(import.meta.url));
+  // point to browser build output
+  const browserDistFolder = join(__dirname, '../browser');
   const indexHtml = join(serverDistFolder, 'index.server.html');
 
   const commonEngine = new CommonEngine();
