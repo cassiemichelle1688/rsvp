@@ -40,7 +40,10 @@
             "server": "src/main.server.ts",
             "prerender": false,
             "ssr": {
-              "entry": "src/server.ts"
+              "entry": "server.ts"
+            },
+            "define": {
+              "ngServerMode": "true"
             }
           },
           "configurations": {
@@ -66,6 +69,7 @@
               "outputHashing": "all"
             },
             "development": {
+              "prerender": false,
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
@@ -104,7 +108,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
-             "styles": [
+            "styles": [
               "node_modules/aos/dist/aos.css",
               "src/styles.scss", 
               "node_modules/leaflet/dist/leaflet.css"
