@@ -1,10 +1,11 @@
 import { ApplicationConfig } from '@angular/core';
 import { provideServerRendering } from '@angular/platform-server';
-import { appConfig } from './app.config';
+import { provideRouter } from '@angular/router';
+import { routes } from './app.routes';
 
 export const serverConfig: ApplicationConfig = {
-  ...appConfig,
   providers: [
     provideServerRendering(),
+    provideRouter(routes),
   ],
 };
