@@ -3,7 +3,7 @@ import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
     {
-        path: ':name/:id', 
+        path: 'home/:name/:id', 
         component: HomeComponent
     },
 ];

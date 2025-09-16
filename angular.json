@@ -37,12 +37,7 @@
             "scripts": [
               "node_modules/aos/dist/aos.js"
             ],
-            "server": "src/main.server.ts",
-            "prerender": false,
-            "ssr": {
-              "entry": "src/server.ts"
-            },
-            "outputMode": "server"
+            "server": "src/main.server.ts"
           },
           "configurations": {
             "production": {
