@@ -29,17 +29,20 @@
               "src/favicon.ico",
               "src/assets"
             ],
-             "styles": [
+            "styles": [
               "node_modules/aos/dist/aos.css",
-              "src/styles.scss", 
+              "src/styles.scss",
               "node_modules/leaflet/dist/leaflet.css"
             ],
-            "scripts": ["node_modules/aos/dist/aos.js"],
+            "scripts": [
+              "node_modules/aos/dist/aos.js"
+            ],
             "server": "src/main.server.ts",
-            "prerender": true,
+            "prerender": false,
             "ssr": {
-              "entry": "server.ts"
-            }
+              "entry": "src/server.ts"
+            },
+            "outputMode": "server"
           },
           "configurations": {
             "production": {

@@ -1,7 +1,9 @@
-import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
-import { config } from './app/app.config.server';
+import { serverConfig } from './app/app.config.server';
+import { bootstrapApplication } from '@angular/platform-browser';
 
-const bootstrap = () => bootstrapApplication(AppComponent, config);
+// ✅ Same bootstrapApplication as browser
+//    but with serverConfig instead of appConfig
+const bootstrap = () => bootstrapApplication(AppComponent, serverConfig);
 
 export default bootstrap;
