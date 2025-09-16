@@ -22,6 +22,7 @@
     "@angular/platform-server": "^20.0.3",
     "@angular/router": "^20.0.3",
     "@angular/ssr": "^20.0.2",
+    "@netlify/angular-runtime": "^3.0.0",
     "aos": "^2.3.4",
     "express": "^4.18.2",
     "leaflet": "^1.9.4",

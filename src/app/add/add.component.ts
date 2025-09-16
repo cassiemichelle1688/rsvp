@@ -1,4 +1,3 @@
-import { NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
 import { ModalService } from '../services/modal.service';
 import { CountdownComponent } from '../countdown/countdown.component';
@@ -6,7 +5,7 @@ import { CountdownComponent } from '../countdown/countdown.component';
 @Component({
   selector: 'app-add',
   standalone: true, // Add this line
-  imports: [NgOptimizedImage, CountdownComponent],
+  imports: [CountdownComponent],
   templateUrl: './add.component.html',
   styleUrl: './add.component.scss'
 })

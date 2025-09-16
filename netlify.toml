@@ -1,0 +1,11 @@
+[build]
+  # Build command for Angular SSR
+  command = "ng build && ng run rsvp:server"
+  publish = "dist/rsvp/browser"
+
+[[plugins]]
+  package = "@netlify/angular-runtime"
+
+  [plugins.inputs]
+    # Path to the Angular server build
+    server = "dist/rsvp/server/main.mjs"
