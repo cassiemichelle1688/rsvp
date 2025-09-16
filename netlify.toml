@@ -1,5 +1,5 @@
 [build]
-  command = "ng build && ng run rsvp:server"
+  command = "ng build"
   publish = "dist/rsvp/browser"
 
 [[plugins]]
