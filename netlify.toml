@@ -4,3 +4,6 @@
 
 [[plugins]]
   package = "@netlify/angular-runtime"
+
+[build.environment]
+  NODE_VERSION = "18"
