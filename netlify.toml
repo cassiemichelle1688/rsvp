@@ -3,4 +3,3 @@
   publish = "dist/rsvp/browser"
 
 [[plugins]]
-  package = "@netlify/angular-runtime"
