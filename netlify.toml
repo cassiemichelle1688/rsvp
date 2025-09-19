@@ -1,5 +1,6 @@
 [build]
-  command = "ng build --configuration production"
+  command = "npm run build:static"
   publish = "dist/rsvp/browser"
 
-[[plugins]]
+[build.environment]
+  NODE_VERSION = "18"
