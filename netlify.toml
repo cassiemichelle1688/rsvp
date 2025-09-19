@@ -2,10 +2,5 @@
   command = "ng build --configuration production"
   publish = "dist/rsvp/browser"
 
-# Force static deployment by setting edge functions to empty
-[[edge_functions]]
-  # This empty section prevents automatic edge function creation
-
-[functions]
-  # Disable functions entirely
-  directory = "nonexistent"
+[[plugins]]
+  package = "@netlify/angular-runtime"
