@@ -1,6 +1,3 @@
 [build]
-  command = "ng build --configuration production"
-  publish = "dist/rsvp/browser"
-
-[[plugins]]
-  package = "@netlify/angular-runtime"
+command = "ng build --configuration production && ng run rsvp:server:production"
+publish = "dist/rsvp/browser"
